@@ -1,7 +1,25 @@
 ﻿using UnityEngine;
 
-public class GridGizmos : MonoSingleton<GridGizmos>
+public class GridGizmos : MonoBehaviour
 {
+	public static GridGizmos Instance
+	{
+		get
+		{
+			if (_instance == null)
+			{	
+				_instance = GameObject.FindObjectOfType<GridGizmos>();
+
+				if (_instance == null)
+				{
+					GameObject go = new GameObject("Grid");
+					_instance = go.AddComponent<GridGizmos>();
+				}
+			}
+			return _instance;
+		}
+	}
+
     public void SnapTransformToGridNode(Transform transform)
     {
         float closestGridX = GetClosestGridX(transform.position.x);
@@ -94,5 +112,7 @@ public class GridGizmos : MonoSingleton<GridGizmos>
 
     [SerializeField]
     private Vector2 _bounds = new Vector2(1200.0f, 800.0f);
+
+	private static GridGizmos _instance = null;
 }
 
