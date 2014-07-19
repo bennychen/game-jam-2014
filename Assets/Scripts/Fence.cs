@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+public enum FenceType
+{
+	Normal,
+	Fixed,
+}
+
 public class Fence : MonoBehaviour
 {
 	public bool IsHorizontal
@@ -32,13 +38,19 @@ public class Fence : MonoBehaviour
 
 	private void HandleOnClick()
 	{
-		_uiItem.enabled = false;
-		Go.to(transform, 0.3f, new GoTweenConfig().localRotation(
-			new Vector3(0, 0, IsHorizontal ? 90 : 0)).onComplete((tween)=>
-		      {
-				_uiItem.enabled = true;
-			  }));
+		if (_type != FenceType.Fixed)
+		{
+			_uiItem.enabled = false;
+			Go.to(transform, 0.3f, new GoTweenConfig().localRotation(
+				new Vector3(0, 0, IsHorizontal ? 90 : 0)).onComplete((tween)=>
+			      {
+					_uiItem.enabled = true;
+				  }));
+		}
 	}
 	
 	private tk2dUIItem _uiItem;
+
+	[SerializeField]
+	private FenceType _type;
 }
