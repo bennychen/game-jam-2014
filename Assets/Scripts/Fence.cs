@@ -4,6 +4,7 @@ public enum FenceType
 {
 	Normal,
 	Fixed,
+	AutoSpin,
 }
 
 public class Fence : MonoBehaviour
@@ -38,7 +39,7 @@ public class Fence : MonoBehaviour
 
 	private void HandleOnClick()
 	{
-		if (_type != FenceType.Fixed)
+		if (_type == FenceType.Normal)
 		{
 			_uiItem.enabled = false;
 			Go.to(transform, 0.3f, new GoTweenConfig().localRotation(
@@ -46,6 +47,14 @@ public class Fence : MonoBehaviour
 			      {
 					_uiItem.enabled = true;
 				  }));
+		}
+	}
+
+	private void Update()
+	{
+		if (_type == FenceType.AutoSpin)
+		{
+			transform.rotation *= Quaternion.Euler(new Vector3(0, 0, Time.deltaTime * 100));
 		}
 	}
 	
