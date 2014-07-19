@@ -25,7 +25,11 @@ public class Player : MonoBehaviour
 
 	private void OnCollisionExit2D(Collision2D collision)
 	{
-		_needToChangeRotation = false;
+		float dot = Mathf.Abs(Vector2.Dot(transform.right, Vector2.right));
+		if (dot < 0.1f || dot > 0.9f)
+		{
+			_needToChangeRotation = false;
+		}
 	}
 
 	private void OnDrawGizmos()
@@ -40,14 +44,14 @@ public class Player : MonoBehaviour
 	private void ChangeDirection()
 	{
 		Quaternion rot = Quaternion.identity;
-		if (Random.Range(0, 100) % 5 == 0)
+		if (Random.Range(0, 100) % 10 == 0)
 		{
 			// add some noise
-			rot = Quaternion.Euler(0, 0, _clockwise * 2 * _rotateFactor * Time.fixedDeltaTime);
+			rot = Quaternion.Euler(0, 0, -_clockwise * 2 * _rotateFactor * Time.fixedDeltaTime);
 		}
 		else
 		{
-			rot = Quaternion.Euler(0, 0, _clockwise * _rotateFactor * Time.fixedDeltaTime);
+			rot = Quaternion.Euler(0, 0, _clockwise * Random.Range(_rotateFactor * 0.5f, _rotateFactor * 2f) * Time.fixedDeltaTime);
 		}
 		transform.localRotation *= rot;
     }
