@@ -4,12 +4,29 @@ public class Player : MonoBehaviour
 {
 	private void Start()
 	{
+		_lastPosition = transform.position;
 	}
 
 	private void FixedUpdate()
 	{
+		if ((transform.position - _lastPosition).sqrMagnitude < Mathf.Epsilon)
+		{
+			_playerStuckTime += Time.fixedDeltaTime;
+		}
+		else
+		{
+			_playerStuckTime = 0;
+		}
+
 		rigidbody2D.AddForce(new Vector2(transform.right.x * _speedFactor, 
 		                                 transform.right.y * _speedFactor));
+
+		_lastPosition = transform.position;
+
+		if (_playerStuckTime > 0.5f)
+		{
+			_needToChangeRotation = true;
+		}
 
 		if (_needToChangeRotation)
 		{
@@ -64,4 +81,6 @@ public class Player : MonoBehaviour
 
 	private bool _needToChangeRotation = false;
 	private int _clockwise;
+	private Vector3 _lastPosition;
+	private float _playerStuckTime;
 }
