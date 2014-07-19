@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Fangtang.LevelEditUtil
+namespace GameJam.LevelEditUtil
 {
     public static class ResourcePath
     {

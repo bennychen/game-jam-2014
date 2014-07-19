@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Fangtang.Utils
+namespace GameJam.Utils
 {
     class ElementsRandomizer<T>
     {

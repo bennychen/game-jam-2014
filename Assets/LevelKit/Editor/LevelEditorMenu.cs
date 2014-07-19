@@ -1,17 +1,17 @@
-﻿using Fangtang.Utils;
+﻿using GameJam.Utils;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 class LevelEditorMenu : EditorWindow
 {
-    [MenuItem("Fangtang/Level/Level Controller Panel 关卡控制面板")]
+    [MenuItem("GameJam/Level/Level Controller Panel 关卡控制面板")]
     private static void DoOpenLevelPanelWindow()
     {
         EditorWindow.GetWindow(typeof(LevelPanelWindow)).Show();
     }
 
-    [MenuItem("Fangtang/Level/Create Grid 创建网格")]
+    [MenuItem("GameJam/Level/Create Grid 创建网格")]
     private static void DoCreateGrids()
     {
         Object gizmo = GameObject.FindObjectOfType(typeof(GridGizmos));
@@ -26,7 +26,7 @@ class LevelEditorMenu : EditorWindow
         }
     }
 
-    [MenuItem("Fangtang/Level/Snap All to Grid 吸附所有到网格")]
+    [MenuItem("GameJam/Level/Snap All to Grid 吸附所有到网格")]
     private static void DoAlignAll()
     {
         object[] objects = GameObject.FindObjectsOfType(typeof(LevelComponent));
@@ -40,7 +40,7 @@ class LevelEditorMenu : EditorWindow
         }
     }
 
-    [MenuItem("Fangtang/Level/Depth/Scatter -0.001f")]
+    [MenuItem("GameJam/Level/Depth/Scatter -0.001f")]
     private static void DoScatterDepthDecrease()
     {
         List<LevelComponent> selected = new List<LevelComponent>();
@@ -63,7 +63,7 @@ class LevelEditorMenu : EditorWindow
         }
     }
 
-    [MenuItem("Fangtang/Level/Depth/Scatter +0.001f")]
+    [MenuItem("GameJam/Level/Depth/Scatter +0.001f")]
     private static void DoScatterDepthIncrease()
     {
         List<LevelComponent> selected = new List<LevelComponent>();
@@ -87,7 +87,7 @@ class LevelEditorMenu : EditorWindow
         }
     }
 
-    [MenuItem("Fangtang/Level/Select 选择/Select All 选择所有")]
+    [MenuItem("GameJam/Level/Select 选择/Select All 选择所有")]
     public static void DoSelectAll()
     {
         Selection.activeGameObject = null;
@@ -104,7 +104,7 @@ class LevelEditorMenu : EditorWindow
         Selection.objects = selected.ToArray() as UnityEngine.Object[];
     }
 
-    [MenuItem("Fangtang/Level/Select 选择/Delete All 删除所有")]
+    [MenuItem("GameJam/Level/Select 选择/Delete All 删除所有")]
     public static void DoDeleteAll()
     {
         if (EditorUtility.DisplayDialog("Delete All 删除所有?",
@@ -121,7 +121,7 @@ class LevelEditorMenu : EditorWindow
         }
     }
 
-    [MenuItem("Fangtang/Level/Select 选择/Select All on Right 选择右边所有")]
+    [MenuItem("GameJam/Level/Select 选择/Select All on Right 选择右边所有")]
     private static void DoSelectAllOnRight()
     {
         Transform lastSelection = Selection.activeTransform;
@@ -145,7 +145,7 @@ class LevelEditorMenu : EditorWindow
         Selection.objects = selected.ToArray() as UnityEngine.Object[];
     }
 
-    [MenuItem("Fangtang/Level/Select 选择/Select All on Left 选择左边所有")]
+    [MenuItem("GameJam/Level/Select 选择/Select All on Left 选择左边所有")]
     private static void DoSelectAllOnLeft()
     {
         Transform lastSelection = Selection.activeTransform;
@@ -169,13 +169,13 @@ class LevelEditorMenu : EditorWindow
         Selection.objects = selected.ToArray() as UnityEngine.Object[];
     }
 
-    [MenuItem("Fangtang/Level/Select 选择/Select All Between Objects 选择之间的所有", true)]
+    [MenuItem("GameJam/Level/Select 选择/Select All Between Objects 选择之间的所有", true)]
     private static bool ValidateDoSelectAllBetweenObjects()
     {
         return Selection.transforms.Length == 2;
     }
 
-    [MenuItem("Fangtang/Level/Select 选择/Select All Between Objects 选择之间的所有")]
+    [MenuItem("GameJam/Level/Select 选择/Select All Between Objects 选择之间的所有")]
     private static void DoSelectAllBetweenObjects()
     {
         if (Selection.transforms.Length != 2)
@@ -213,7 +213,7 @@ class LevelEditorMenu : EditorWindow
         Selection.objects = selected.ToArray() as UnityEngine.Object[];
     }
 
-    [MenuItem("Fangtang/Level/Spawn Point/Reset to Origin")]
+    [MenuItem("GameJam/Level/Spawn Point/Reset to Origin")]
     private static void DoResetSpawnPoint()
     {
         PositionMarkup spawnPoint = FindObjectOfType(typeof(PositionMarkup)) as PositionMarkup;

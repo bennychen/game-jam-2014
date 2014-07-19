@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Fangtang.Utils
+namespace GameJam.Utils
 {
     public class HttpRequestUnity
     {

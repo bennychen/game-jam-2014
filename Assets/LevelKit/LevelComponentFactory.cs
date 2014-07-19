@@ -1,4 +1,4 @@
-﻿using Fangtang.Utils;
+﻿using GameJam.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 

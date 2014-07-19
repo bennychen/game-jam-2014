@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Fangtang.Utils;
+using GameJam.Utils;
 
 public class Element2D : MonoBehaviour
 {

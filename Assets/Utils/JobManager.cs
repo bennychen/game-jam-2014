@@ -6,7 +6,7 @@ public class JobManager : MonoSingleton<JobManager>
 {
 }
 
-namespace Fangtang.Utils
+namespace GameJam.Utils
 {
     public class Job
     {

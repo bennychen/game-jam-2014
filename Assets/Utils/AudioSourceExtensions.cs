@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Fangtang.Utils
+namespace GameJam.Utils
 {
     public static class AudioSourceExtensions
     {

@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using Fangtang.Utils;
+using GameJam.Utils;
 
 public class GameObjectEdit : EditorWindow
 {
-    [MenuItem("Fangtang/Game Object/Create Prefab")]
+    [MenuItem("GameJam/Game Object/Create Prefab")]
     public static void DoCreatePrefabs()
     {
         Transform[] transforms = Selection.transforms;
@@ -24,7 +24,7 @@ public class GameObjectEdit : EditorWindow
         }
     }
 
-    [MenuItem("Fangtang/Game Object/Print Object Distance")]
+    [MenuItem("GameJam/Game Object/Print Object Distance")]
     private static void DoPrintObjectDistance()
     {
         if (Selection.transforms.Length == 2)
@@ -35,7 +35,7 @@ public class GameObjectEdit : EditorWindow
     }
 
 #if ENABLE_TK2D
-    [MenuItem("Fangtang/Game Object/Print Sprite Bounds")]
+    [MenuItem("GameJam/Game Object/Print Sprite Bounds")]
     private static void DoPrintSpriteBounds()
     {
         GameObject gameObject = Selection.activeGameObject;
@@ -49,7 +49,7 @@ public class GameObjectEdit : EditorWindow
         }
     }
 
-    [MenuItem("Fangtang/Game Object/Print Batched Sprite Bounds")]
+    [MenuItem("GameJam/Game Object/Print Batched Sprite Bounds")]
     private static void DoPrintBatchedSpriteBounds()
     {
         GameObject gameObject = Selection.activeGameObject;
@@ -64,7 +64,7 @@ public class GameObjectEdit : EditorWindow
     }
 #endif
 
-    [MenuItem("Fangtang/Game Object/Print Camera Size")]
+    [MenuItem("GameJam/Game Object/Print Camera Size")]
     private static void DoPrintCameraSize()
     {
         GameObject gameObject = Selection.activeGameObject;

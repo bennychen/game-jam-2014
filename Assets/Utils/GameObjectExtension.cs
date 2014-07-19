@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Fangtang.Utils
+namespace GameJam.Utils
 {
     public static class GameObjectExtension
     {

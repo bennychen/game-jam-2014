@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace Fangtang.Utils
+namespace GameJam.Utils
 {
 	public class Singleton<T> : IDisposable where T : Singleton<T>
 	{

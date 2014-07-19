@@ -1,4 +1,4 @@
-﻿using Fangtang.LevelEditUtil;
+﻿using GameJam.LevelEditUtil;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
