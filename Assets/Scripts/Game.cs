@@ -38,6 +38,7 @@ public static class Game
 
 	private static string[] _levels = new string[] {
 		"level001",
-		"level002"
+		"level002",
+		"level003"
 	};
 }

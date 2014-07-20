@@ -29,4 +29,10 @@ public class LevelEnd : MonoBehaviour
 
 	[SerializeField]
 	private tk2dSprite _comic;
+
+	[SerializeField]
+	private AudioClip _failAudio;
+
+	[SerializeField]
+	private AudioClip _successAudio;
 }
