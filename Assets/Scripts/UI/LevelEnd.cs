@@ -17,6 +17,7 @@ public class LevelEnd : MonoBehaviour
 	private void OnEnable()
 	{
 		_comic.SetSprite(IsWinning ? "success" : "fail");
+		_comic.scale = Vector3.one * (IsWinning ? 0.3f : 0.7f);
 	}
 
 	
