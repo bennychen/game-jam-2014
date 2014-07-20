@@ -4,7 +4,7 @@ public class HomeScreen : MonoBehaviour
 {
 	public void StartGame()
 	{
-		Application.LoadLevel("level001");
+		Game.LoadCurrentLevel();
 	}
 
 	[SerializeField]
