@@ -66,7 +66,9 @@ public class LevelComponentFactory : MonoBehaviour
 
             ObjectRecycler recycler = new ObjectRecycler(templatePrefab, initialCapacity, subcontainer, (gameobject) =>
             {
+#if UNITY_EDITOR
                 gameobject.GetComponent<LevelComponent>().AddRigidbodiesToStaticColliders();
+#endif
             });
             _componentIdToPools.Add(levelComponentId, recycler);
         }

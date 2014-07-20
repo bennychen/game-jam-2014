@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public static class LevelKitUtils
 {
@@ -57,6 +59,7 @@ public static class LevelKitUtils
 
     public static void CreatePrefebInPath(string path, GameObject[] objects)
     {
+#if UNITY_EDITOR
         Debug.Log(path);
         
         for (int i = 0; i < objects.Length;i++)
@@ -66,5 +69,6 @@ public static class LevelKitUtils
                        objects[i], ReplacePrefabOptions.ConnectToPrefab);
             configPrefab.transform.position = Vector3.zero;
         }
+#endif
     }
 }
