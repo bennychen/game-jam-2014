@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
 	private void Start()
 	{
 		_lastPosition = transform.position;
+		_sprite = GetComponent<tk2dSprite>();
+		_sprite.SetSprite("front");
 	}
 
 	private void FixedUpdate()
@@ -73,12 +75,33 @@ public class Player : MonoBehaviour
 		transform.localRotation *= rot;
     }
 
+//	private void Update()
+//	{
+//		if (transform.eulerAngles.z <= 45 || transform.eulerAngles.z >= 315)
+//		{
+//			_sprite.SetSprite("right");
+//		}
+//		else if (transform.eulerAngles.z > 45 && transform.eulerAngles.z <= 135)
+//		{
+//			_sprite.SetSprite("back");
+//		}
+//		else if (transform.eulerAngles.z > 135 && transform.eulerAngles.z <= 225)
+//		{
+//			_sprite.SetSprite("left");
+//		}
+//		else
+//		{
+//			_sprite.SetSprite("front");
+//		}
+//	}
+
 	[SerializeField]
 	private float _speedFactor = 1f;
 
 	[SerializeField]
 	private float _rotateFactor = 60f;
 
+	private tk2dSprite _sprite;
 	private bool _needToChangeRotation = false;
 	private int _clockwise;
 	private Vector3 _lastPosition;

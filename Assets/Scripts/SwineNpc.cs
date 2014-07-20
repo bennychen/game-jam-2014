@@ -10,6 +10,7 @@ public class SwineNpc : MonoBehaviour
 		_yShift = Random.Range(-0.05f, 0.05f);
 		_originalLocalPosition = transform.localPosition;
 		_timeShift = Random.Range(0, 10);
+		GetComponent<tk2dSprite>().SetSprite("pig" + Random.Range(1, 5));
 	}
 
 	private void Update()
