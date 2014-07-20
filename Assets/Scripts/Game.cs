@@ -2,6 +2,7 @@
 
 public static class Game
 {
+	/*
 	public static int CurrentLevelIndex
 	{
 		get
@@ -13,6 +14,8 @@ public static class Game
 			PlayerPrefs.SetInt("current_level", Mathf.Clamp(value, 0, _levels.Length - 1));
 		}
 	}
+	*/
+	public static int CurrentLevelIndex { get; set; }
 
 	public static bool HasNextLevel
 	{
