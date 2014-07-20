@@ -6,13 +6,17 @@ public class LevelEnd : MonoBehaviour
 
 	public void RetartGame()
 	{
-		Application.LoadLevel("level001");
+		Game.LoadCurrentLevel();
+	}
+
+	public void NextGame()
+	{
+		Game.LoadNextLevel();
 	}
 
 	private void OnEnable()
 	{
-		Debug.Log("player winning = " + IsWinning);
-		_winningText.text = IsWinning ? "You Wins" : "You failed";
+		_comic.SetSprite(IsWinning ? "success" : "fail");
 	}
 
 	
@@ -20,5 +24,8 @@ public class LevelEnd : MonoBehaviour
 	private tk2dUIItem _restartButton;
 
 	[SerializeField]
-	private tk2dTextMesh _winningText;
+	private tk2dUIItem _nextButton;
+
+	[SerializeField]
+	private tk2dSprite _comic;
 }
